@@ -1,0 +1,35 @@
+{
+  "name": "adn-magento/etl",
+  "description": "Adn Magento ETL",
+  "keywords": [
+    "adn",
+    "magento",
+    "import",
+    "export",
+    "etl"
+  ],
+  "type": "magento2-module",
+  "authors": [
+    {
+      "name": "Aurélien André",
+      "email": "adn.magento@gmail.com"
+    }
+  ],
+  "license": [
+    "OSL-3.0"
+  ],
+  "require": {
+    "php": "~7.4.0",
+    "magento/framework": "103.0.*"
+  },
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Adn\\Etl\\": ""
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

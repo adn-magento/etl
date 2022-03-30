@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace Adn\Etl\Model;
 
 use Exception;
+use Magento\Framework\App\ObjectManager;
 use Psr\Log\LoggerInterface;
 
 class Runner implements RunnerInterface
@@ -22,11 +23,11 @@ class Runner implements RunnerInterface
     /**
      * Etl runner constructor
      *
-     * @param LoggerInterface $logger Logger
+     * @param LoggerInterface|null $logger Logger
      */
-    public function __construct(LoggerInterface $logger)
+    public function __construct(LoggerInterface $logger = null)
     {
-        $this->logger = $logger;
+        $this->logger = $logger ?? ObjectManager::getInstance()->get(LoggerInterface::class);
     }
 
     /**

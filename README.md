@@ -84,9 +84,22 @@ $pipeline = new Pipeline([
     ),
 ]);
 
+$context = new context(['identifier' => 1])
+
 $runner = new Runner();
 
-$runner->runPipeline($pipeline, new context([
-    'identifier' => 1,
-]));
+$preProcess = function (Process $process, Context $context) {
+    sprintf('Process %s start' . PHP_EOL, $process->getName());
+};
+
+$postProcess = function (Process $process, Context $context) {
+    sprintf('Process %s end' . PHP_EOL, $process->getName());
+}
+
+$runner->runPipeline(
+    $pipeline, 
+    $context,
+    $preProcess,
+    $postProcess
+);
 ```

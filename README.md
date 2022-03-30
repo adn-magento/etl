@@ -71,7 +71,7 @@ $pipeline = new Pipeline([
         
             $entries[] = [
                 'id'     => (int)$identifier,
-                'source' => (string)'first_process_etl',
+                'source' => (string)'second_process_etl',
                 'data'   => (string)$entry['label'],
             ];
             
